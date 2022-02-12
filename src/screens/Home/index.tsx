@@ -1,5 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {ButtonIcon} from '../../components/ButtonIcon';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../RootStackPrams';
 import {
   Container,
   ContainerText,
@@ -9,7 +12,17 @@ import {
   ContainerButton,
 } from './styles';
 
+type HomeScreenProp = StackNavigationProp<RootStackParamList, 'Home'>;
+
 const Home: React.FC = () => {
+  const [select, setIsSelected] = useState(false);
+  const navigation = useNavigation<HomeScreenProp>();
+
+  const nextScreen = () => {
+    setIsSelected(!select);
+    navigation.navigate('ChooseVehicle');
+  };
+
   return (
     <Container>
       <ContainerText>
@@ -21,7 +34,13 @@ const Home: React.FC = () => {
         </TextTertiary>
       </ContainerText>
       <ContainerButton>
-        <ButtonIcon title="Veiculos" icon="car-side" sizes="LARGE" />
+        <ButtonIcon
+          onPress={() => nextScreen()}
+          title="Veiculos"
+          icon="car-side"
+          sizes="LARGE"
+          isSelected={select}
+        />
       </ContainerButton>
     </Container>
   );

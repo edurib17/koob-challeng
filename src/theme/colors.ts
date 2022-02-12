@@ -1,7 +1,0 @@
-export const COLORS = {
-  WHITE: '#FAFAFA',
-  GRAY: '#E5E5E5',
-  ORANGE: '#FC570C',
-  GRAY_PRIMARY: '#686868',
-  GRAY_SECONDARY: '#787878',
-};

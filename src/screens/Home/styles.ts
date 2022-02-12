@@ -5,15 +5,17 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 70px;
+  background: #e5e5e5;
 `;
 
 export const ContainerText = styled.View`
   justify-content: center;
   padding: 10px;
+  margin-top: 50px;
 `;
 
 export const TextPrimary = styled.Text`
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
   font-size: 35px;
@@ -26,6 +28,7 @@ export const TextSecondary = styled.Text`
   font-size: 25px;
   line-height: 29px;
   margin-bottom: 23px;
+  color: #686868;
 `;
 
 export const TextTertiary = styled.Text`
