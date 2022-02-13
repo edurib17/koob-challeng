@@ -18,7 +18,7 @@ export const TextPrimary = styled.Text`
   font-family: 'Roboto';
   font-style: normal;
   font-weight: bold;
-  font-size: 35px;
+  font-size: 30px;
   line-height: 41px;
 `;
 

@@ -21,6 +21,4 @@ export const Text = styled.Text`
   font-style: normal;
   font-weight: bold;
   font-size: 40px;
-  line-height: 47px;
-  margin-top: 20px;
 `;

@@ -20,13 +20,17 @@ export function Steps({
     <Container>
       {step1 && <Text> Veiculos {'>'} </Text>}
 
-      {step2 && <Text> Carros </Text>}
+      {step2 && <Text>Carros </Text>}
 
-      {step3 && <Text>{'>'} Carros </Text>}
+      {step3 && <Text>{'>'} Audi </Text>}
 
-      {step4 && <Text>{'>'} Audi </Text>}
+      {step4 && (
+        <Text>
+          {'>'} 80 S2 Avant {'>'}{' '}
+        </Text>
+      )}
 
-      {step5 && <Text>{'>'} 1995-1 Gasolina </Text>}
+      {step5 && <Text> 1995-1 Gasolina</Text>}
     </Container>
   );
 }

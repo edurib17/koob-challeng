@@ -7,12 +7,14 @@ const SIZES = {
   SMALL: {
     width: 110,
     height: 110,
-    fontSize: 50,
+    sizeIcon: 50,
+    sizeText: 15,
   },
   LARGE: {
     width: 360,
     height: 315,
-    fontSize: 157,
+    sizeIcon: 140,
+    sizeText: 35,
   },
 };
 
@@ -21,7 +23,7 @@ type Props = TouchableOpacityProps & {
   icon: React.ComponentProps<typeof FontAwesome5>['name'];
   sizes?: 'LARGE' | 'SMALL';
   isSelected: boolean;
-  onPress: any;
+  onPress?: () => void;
 };
 
 export function ButtonIcon({
@@ -31,7 +33,7 @@ export function ButtonIcon({
   isSelected = false,
   onPress,
 }: Props) {
-  const {width, height, fontSize} = SIZES[sizes];
+  const {width, height, sizeIcon, sizeText} = SIZES[sizes];
   return (
     <Button
       onPress={onPress}
@@ -44,9 +46,9 @@ export function ButtonIcon({
       <FontAwesome5
         name={icon}
         size={24}
-        style={{fontSize, color: '#FC570C'}}
+        style={{fontSize: sizeIcon, color: '#FC570C'}}
       />
-      <Text>{title}</Text>
+      <Text style={{fontSize: sizeText}}>{title}</Text>
     </Button>
   );
 }
