@@ -17,7 +17,7 @@ import {
 
 type ChooseVehicleScreenProp = StackNavigationProp<
   RootStackParamList,
-  'ChooseVehicle'
+  'ChooseModelVehicle'
 >;
 
 export function ChooseModelVehicle() {

@@ -8,6 +8,7 @@ import Home from './src/screens/Home';
 import {ChooseVehicle} from './src/screens/ChooseVehicle';
 import {ChooseModelVehicle} from './src/screens/ChooseModelVehicle';
 import {ChooseYearVehicle} from './src/screens/ChooseYearVehicle';
+import {DetailsVehicle} from './src/screens/DetailsVehicle';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -24,6 +25,7 @@ const App = () => {
           component={ChooseModelVehicle}
         />
         <Stack.Screen name="ChooseYearVehicle" component={ChooseYearVehicle} />
+        <Stack.Screen name="DetailsVehicle" component={DetailsVehicle} />
       </Stack.Navigator>
     </NavigationContainer>
   );

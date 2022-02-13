@@ -3,4 +3,5 @@ export type RootStackParamList = {
   ChooseVehicle: undefined;
   ChooseModelVehicle: undefined;
   ChooseYearVehicle: undefined;
+  DetailsVehicle: undefined;
 };
