@@ -50,7 +50,7 @@ export const SideRightPrice = styled.Text`
   color: #fc570c;
 `;
 
-export const ContainerButton = styled.View`
+export const Footer = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;

@@ -2,11 +2,10 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  justify-content: flex-start;
-  align-items: flex-start;
 `;
 
 export const ContainerTags = styled.View`
+  flex: 1;
   margin-top: 50px;
   margin-left: 15px;
 `;
@@ -21,9 +20,7 @@ export const Description = styled.Text`
 `;
 
 export const ContainerButtonsTags = styled.View`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
 `;
@@ -46,7 +43,7 @@ export const SeeMoreText = styled.Text`
 export const Footer = styled.View`
   width: 100%;
   flex-direction: row;
-  margin-top: 240px;
   justify-content: space-between;
   padding: 25px;
+  margin-bottom: 10px;
 `;

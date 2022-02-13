@@ -15,13 +15,13 @@ import {
   Footer,
 } from './styles';
 
-type ChooseVehicleScreenProp = StackNavigationProp<
+type ChooseModelVehicleScreenProp = StackNavigationProp<
   RootStackParamList,
   'ChooseModelVehicle'
 >;
 
 export function ChooseModelVehicle() {
-  const navigation = useNavigation<ChooseVehicleScreenProp>();
+  const navigation = useNavigation<ChooseModelVehicleScreenProp>();
   const tags = [
     {id: 1, name: '100 2.8 V6'},
     {id: 2, name: '80 2.0'},

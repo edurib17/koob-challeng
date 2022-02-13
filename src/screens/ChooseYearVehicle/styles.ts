@@ -7,6 +7,7 @@ export const Container = styled.View`
 `;
 
 export const ContainerTags = styled.View`
+  flex: 1;
   margin-top: 50px;
   margin-left: 15px;
 `;
@@ -21,7 +22,6 @@ export const Description = styled.Text`
 `;
 
 export const ContainerButtonsTags = styled.View`
-  align-items: flex-start;
   justify-content: space-evenly;
   flex-direction: row;
   flex-wrap: wrap;
@@ -45,7 +45,7 @@ export const SeeMoreText = styled.Text`
 export const Footer = styled.View`
   width: 100%;
   flex-direction: row;
-  margin-top: 270px;
   justify-content: space-between;
   padding: 25px;
+  margin-bottom: 10px;
 `;

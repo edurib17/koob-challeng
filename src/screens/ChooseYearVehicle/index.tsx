@@ -15,16 +15,18 @@ import {
   Footer,
 } from './styles';
 
-type ChooseVehicleScreenProp = StackNavigationProp<
+type ChooseYearVehicleScreenProp = StackNavigationProp<
   RootStackParamList,
   'ChooseYearVehicle'
 >;
 
 export function ChooseYearVehicle() {
-  const navigation = useNavigation<ChooseVehicleScreenProp>();
+  const navigation = useNavigation<ChooseYearVehicleScreenProp>();
   const tags = [
     {id: 1, name: '1995-1 Gasolina'},
     {id: 2, name: '1994-1 Gasolina'},
+    {id: 3, name: '1995-1 Gasolina'},
+    {id: 4, name: '1994-1'},
   ];
 
   return (

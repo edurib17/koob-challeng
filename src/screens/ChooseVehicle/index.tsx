@@ -9,12 +9,12 @@ import {Tag} from '../../components/Tag';
 import {
   Container,
   Description,
-  ContainerTags,
   ContainerButtons,
   ContainerButtonsTags,
   SeeMore,
   SeeMoreText,
   Footer,
+  ContainerVehicle,
 } from './styles';
 
 type ChooseVehicleScreenProp = StackNavigationProp<
@@ -65,7 +65,7 @@ export function ChooseVehicle() {
     <Container>
       {console.log(selected)}
       <Steps step1 step2 />
-      <ContainerTags>
+      <ContainerVehicle>
         <Description>Selecione o tipo de veiculo</Description>
         <ContainerButtons>
           <ButtonIcon
@@ -91,8 +91,6 @@ export function ChooseVehicle() {
             onPress={() => handleSelect('caminhoes')}
           />
         </ContainerButtons>
-      </ContainerTags>
-      <ContainerTags>
         <Description>Selecione a marca do veiculo</Description>
         <ContainerButtonsTags>
           {tags.map((item, index) => (
@@ -102,7 +100,7 @@ export function ChooseVehicle() {
         <SeeMore>
           <SeeMoreText>Ver mais...</SeeMoreText>
         </SeeMore>
-      </ContainerTags>
+      </ContainerVehicle>
       <Footer>
         <Button
           sizes="NOBACKGROUND"

@@ -2,12 +2,9 @@ import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
-  justify-content: flex-start;
-  align-items: flex-start;
 `;
-
-export const ContainerTags = styled.View`
-  margin-top: 40px;
+export const ContainerVehicle = styled.View`
+  flex: 1;
   margin-left: 15px;
   padding-right: 25px;
 `;
@@ -19,19 +16,21 @@ export const Description = styled.Text`
   font-size: 17px;
   color: #787878;
   margin-bottom: 29px;
+  margin-top: 41px;
 `;
 
 export const ContainerButtons = styled.View`
   width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 2px;
 `;
 
 export const ContainerButtonsTags = styled.View`
   justify-content: space-around;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: -10px;
+  margin-top: -25px;
 `;
 
 export const SeeMore = styled.TouchableOpacity`
@@ -52,7 +51,7 @@ export const SeeMoreText = styled.Text`
 export const Footer = styled.View`
   width: 100%;
   flex-direction: row;
-  margin-top: 100px;
   justify-content: space-between;
   padding: 25px;
+  margin-bottom: 10px;
 `;

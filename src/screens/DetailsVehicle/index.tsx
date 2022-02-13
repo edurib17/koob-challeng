@@ -1,4 +1,7 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../RootStackPrams';
 import Feather from 'react-native-vector-icons/Feather';
 import {Button} from '../../components/Button';
 import {Steps} from '../../components/Steps';
@@ -10,10 +13,15 @@ import {
   SideLeft,
   SideRight,
   SideRightPrice,
-  ContainerButton,
+  Footer,
 } from './styles';
 
+type DetailVehicleScreenProp = StackNavigationProp<
+  RootStackParamList,
+  'DetailsVehicle'
+>;
 export function DetailsVehicle() {
+  const navigation = useNavigation<DetailVehicleScreenProp>();
   return (
     <Container>
       <Steps step1 step2 step3 step4 step5 />
@@ -60,9 +68,13 @@ export function DetailsVehicle() {
           <SideRight>1</SideRight>
         </ContainerSides>
       </ContainerDetails>
-      <ContainerButton>
-        <Button title="Voltar ao início" sizes="BACKGROUND" />
-      </ContainerButton>
+      <Footer>
+        <Button
+          title="Voltar ao início"
+          sizes="BACKGROUND"
+          onPress={() => navigation.navigate('Home')}
+        />
+      </Footer>
     </Container>
   );
 }
