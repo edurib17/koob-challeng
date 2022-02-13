@@ -6,7 +6,7 @@ export const Container = styled.View`
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: #e5e5e5;
+  background-color: #e5e5e5;
 `;
 
 export const ContainerText = styled.View`
@@ -16,27 +16,31 @@ export const ContainerText = styled.View`
 `;
 
 export const TextPrimary = styled.Text`
-  font-family: 'Roboto';
+  font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 30px;
+  font-size: 35px;
   line-height: 41px;
+  color: #686868;
 `;
 
 export const TextSecondary = styled.Text`
+  font-family: Roboto;
   font-style: normal;
   font-weight: 600;
   font-size: 25px;
   line-height: 29px;
-  margin-bottom: 23px;
   color: #686868;
 `;
 
 export const TextTertiary = styled.Text`
+  font-family: Roboto;
   font-style: normal;
+  font-weight: normal;
   font-size: 16px;
   line-height: 19px;
-  text-align: justify;
+  color: #686868;
+  margin-top: 14px;
 `;
 
 export const ContainerButton = styled.View`

@@ -20,5 +20,6 @@ export const Text = styled.Text`
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
-  font-size: 40px;
+  line-height: 40px;
+  color: #686868;
 `;
