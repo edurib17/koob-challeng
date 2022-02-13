@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {Button} from '../../components/Button';
 import {ButtonIcon} from '../../components/ButtonIcon';
 import {Steps} from '../../components/Steps';
 import {Tag} from '../../components/Tag';
@@ -10,6 +11,7 @@ import {
   ContainerButtonsTags,
   SeeMore,
   SeeMoreText,
+  Footer,
 } from './styles';
 
 export function ChooseVehicle() {
@@ -92,6 +94,10 @@ export function ChooseVehicle() {
           <SeeMoreText>Ver mais</SeeMoreText>
         </SeeMore>
       </ContainerTags>
+      <Footer>
+        <Button sizes="NOBACKGROUND" title="Voltar" />
+        <Button sizes="BACKGROUND" title="Próximo" />
+      </Footer>
     </Container>
   );
 }

@@ -1,9 +1,10 @@
 import styled from 'styled-components/native';
+import {getBottomSpace} from 'react-native-iphone-x-helper';
 
 export const Container = styled.View`
   flex-direction: row;
   margin-left: 10px;
-  margin-top: 47px;
+  margin-top: ${getBottomSpace() + '56px'};
   flex-wrap: wrap;
 `;
 

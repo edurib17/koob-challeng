@@ -49,3 +49,11 @@ export const SeeMoreText = styled.Text`
   text-decoration-line: underline;
   color: #fc570c;
 `;
+
+export const Footer = styled.View`
+  width: 100%;
+  flex-direction: row;
+  margin-top: 100px;
+  justify-content: space-between;
+  padding: 25px;
+`;
