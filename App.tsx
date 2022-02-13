@@ -7,6 +7,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Home from './src/screens/Home';
 import {ChooseVehicle} from './src/screens/ChooseVehicle';
 import {ChooseModelVehicle} from './src/screens/ChooseModelVehicle';
+import {ChooseYearVehicle} from './src/screens/ChooseYearVehicle';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -22,6 +23,7 @@ const App = () => {
           name="ChooseModelVehicle"
           component={ChooseModelVehicle}
         />
+        <Stack.Screen name="ChooseYearVehicle" component={ChooseYearVehicle} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -1,4 +1,7 @@
 import React from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../RootStackPrams';
 import {Button} from '../../components/Button';
 import {Steps} from '../../components/Steps';
 import {Tag} from '../../components/Tag';
@@ -12,7 +15,13 @@ import {
   Footer,
 } from './styles';
 
+type ChooseVehicleScreenProp = StackNavigationProp<
+  RootStackParamList,
+  'ChooseVehicle'
+>;
+
 export function ChooseModelVehicle() {
+  const navigation = useNavigation<ChooseVehicleScreenProp>();
   const tags = [
     {id: 1, name: '100 2.8 V6'},
     {id: 2, name: '80 2.0'},
@@ -36,8 +45,16 @@ export function ChooseModelVehicle() {
         </SeeMore>
       </ContainerTags>
       <Footer>
-        <Button sizes="NOBACKGROUND" title="Voltar" />
-        <Button sizes="BACKGROUND" title="Próximo" />
+        <Button
+          sizes="NOBACKGROUND"
+          title="Voltar"
+          onPress={() => navigation.goBack()}
+        />
+        <Button
+          sizes="BACKGROUND"
+          title="Próximo"
+          onPress={() => navigation.navigate('ChooseYearVehicle')}
+        />
       </Footer>
     </Container>
   );
