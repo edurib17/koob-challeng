@@ -6,6 +6,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 //Pages
 import Home from './src/screens/Home';
 import {ChooseVehicle} from './src/screens/ChooseVehicle';
+import {ChooseModelVehicle} from './src/screens/ChooseModelVehicle';
 
 const App = () => {
   const Stack = createStackNavigator();
@@ -17,6 +18,10 @@ const App = () => {
       <Stack.Navigator screenOptions={{headerShown: false}}>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="ChooseVehicle" component={ChooseVehicle} />
+        <Stack.Screen
+          name="ChooseModelVehicle"
+          component={ChooseModelVehicle}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

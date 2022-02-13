@@ -7,9 +7,8 @@ export const Container = styled.View`
 `;
 
 export const ContainerTags = styled.View`
-  margin-top: 40px;
+  margin-top: 50px;
   margin-left: 15px;
-  padding-right: 25px;
 `;
 
 export const Description = styled.Text`
@@ -21,17 +20,12 @@ export const Description = styled.Text`
   margin-bottom: 29px;
 `;
 
-export const ContainerButtons = styled.View`
-  width: 100%;
-  flex-direction: row;
-  justify-content: space-between;
-`;
-
 export const ContainerButtonsTags = styled.View`
-  justify-content: space-around;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   flex-direction: row;
   flex-wrap: wrap;
-  margin-top: -10px;
 `;
 
 export const SeeMore = styled.TouchableOpacity`
@@ -52,7 +46,7 @@ export const SeeMoreText = styled.Text`
 export const Footer = styled.View`
   width: 100%;
   flex-direction: row;
-  margin-top: 100px;
+  margin-top: 240px;
   justify-content: space-between;
   padding: 25px;
 `;

@@ -1,4 +1,7 @@
 import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import {StackNavigationProp} from '@react-navigation/stack';
+import {RootStackParamList} from '../RootStackPrams';
 import {Button} from '../../components/Button';
 import {ButtonIcon} from '../../components/ButtonIcon';
 import {Steps} from '../../components/Steps';
@@ -14,11 +17,17 @@ import {
   Footer,
 } from './styles';
 
+type ChooseVehicleScreenProp = StackNavigationProp<
+  RootStackParamList,
+  'ChooseVehicle'
+>;
+
 export function ChooseVehicle() {
   const [selected, setSelected] = useState('');
   const [car, setCar] = useState(Boolean);
   const [motorcycle, setMotorcycle] = useState(Boolean);
   const [truck, setTruck] = useState(Boolean);
+  const navigation = useNavigation<ChooseVehicleScreenProp>();
 
   const tags = [
     {id: 1, name: 'BMW'},
@@ -91,12 +100,20 @@ export function ChooseVehicle() {
           ))}
         </ContainerButtonsTags>
         <SeeMore>
-          <SeeMoreText>Ver mais</SeeMoreText>
+          <SeeMoreText>Ver mais...</SeeMoreText>
         </SeeMore>
       </ContainerTags>
       <Footer>
-        <Button sizes="NOBACKGROUND" title="Voltar" />
-        <Button sizes="BACKGROUND" title="Próximo" />
+        <Button
+          sizes="NOBACKGROUND"
+          title="Voltar"
+          onPress={() => navigation.goBack()}
+        />
+        <Button
+          sizes="BACKGROUND"
+          title="Próximo"
+          onPress={() => navigation.navigate('ChooseModelVehicle')}
+        />
       </Footer>
     </Container>
   );

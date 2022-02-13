@@ -4,6 +4,7 @@ export const TagButton = styled.TouchableOpacity`
   height: 46px;
   padding-left: 29px;
   padding-right: 29px;
+  margin-right: 9px;
   margin-top: 14px;
   background: #fafafa;
   // border: 1px solid #fc570c;
