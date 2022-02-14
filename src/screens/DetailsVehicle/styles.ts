@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
@@ -15,6 +15,7 @@ export const Description = styled.Text`
 `;
 
 export const ContainerDetails = styled.View`
+  flex: 4;
   padding: 15px;
 `;
 
@@ -28,7 +29,7 @@ export const ContainerSides = styled.View`
 export const SideLeft = styled.Text`
   font-style: normal;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 29px;
   color: #fc570c;
 `;
@@ -36,9 +37,15 @@ export const SideLeft = styled.Text`
 export const SideRight = styled.Text`
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 17px;
   line-height: 29px;
   color: #fc570c;
+`;
+
+export const SideRightCopy = styled.TouchableOpacity`
+  color: gray;
+  flex-direction: row;
+  margin-left: 197px;
 `;
 
 export const SideRightPrice = styled.Text`

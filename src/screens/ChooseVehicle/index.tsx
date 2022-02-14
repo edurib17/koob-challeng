@@ -29,12 +29,12 @@ export function ChooseVehicle() {
   const [brand, setBrand] = useState("");
   const [motorcycle, setMotorcycle] = useState(Boolean);
   const [truck, setTruck] = useState(Boolean);
-  const [value, setValue] = useState(3);
+  const [value, setValue] = useState(5);
   const navigation = useNavigation<ChooseVehicleScreenProp>();
   const { getBrands, brands, getModels } = getData();
 
   useEffect(() => {
-    getBrands("carros");
+    getBrands("Carros");
   }, []);
 
   const handleSelect = (vehicle_params: React.SetStateAction<string>) => {
@@ -43,16 +43,16 @@ export function ChooseVehicle() {
         setTruck(false);
         setMotorcycle(false);
         setCar(!car);
-        setValue(3);
-        setBrand("")
+        setValue(5);
+        setBrand("");
         getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;
       case "Motos":
         setTruck(false);
         setCar(false);
-        setValue(3);
-        setBrand("")
+        setValue(5);
+        setBrand("");
         setMotorcycle(!motorcycle);
         getBrands(vehicle_params);
         setSelected(vehicle_params);
@@ -61,8 +61,8 @@ export function ChooseVehicle() {
         setCar(false);
         setMotorcycle(false);
         setTruck(!truck);
-        setValue(3);
-        setBrand("")
+        setValue(5);
+        setBrand("");
         getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;
@@ -122,7 +122,7 @@ export function ChooseVehicle() {
             />
           ))}
         </ContainerButtonsTags>
-        {value == 3 ? (
+        {value == 5 && brands.length > 5  ? (
           <SeeMore onPress={() => setValue(brands.length)}>
             <SeeMoreText>Ver mais...</SeeMoreText>
           </SeeMore>

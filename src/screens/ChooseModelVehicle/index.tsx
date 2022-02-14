@@ -38,11 +38,11 @@ export function ChooseModelVehicle() {
       <ContainerTags>
         <Description>Selecione o modelo do veiculo</Description>
         <ContainerButtonsTags
-          showsVerticalScrollIndicator={false}
+          showsHorizontalScrollIndicator={false}
           contentContainerStyle={{
-            flexWrap: "wrap",
-            flexDirection: "row",
-            justifyContent: "space-around",
+             flexWrap:"wrap",
+             justifyContent:"flex-start",
+             flexDirection:"row"
           }}
         >
           {models.slice(0, value).map((item: any, index) => (

@@ -22,12 +22,11 @@ export const Description = styled.Text`
 export const ContainerButtonsTags = styled.ScrollView`
   flex: 1;
   margin-top: -25px;
-  width: 100%;
-  margin-left: -12px;
+  padding-right: 19px;
 `;
 
 export const SeeMore = styled.TouchableOpacity`
-  flex: 1;
+  flex: 2;
   margin-left: 10px;
 `;
 

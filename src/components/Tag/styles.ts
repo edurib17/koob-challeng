@@ -6,8 +6,8 @@ type Props = {
 
 export const TagButton = styled.TouchableOpacity`
   height: 46px;
-  padding-left: 53px;
-  padding-right: 53px;
+  padding-left: 35px;
+  padding-right: 35px;
   margin-left: 5px;
   margin-top: 14px;
   background: #fafafa;

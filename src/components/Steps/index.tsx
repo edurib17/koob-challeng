@@ -17,26 +17,27 @@ export function Steps({
   step4 = false,
   step5 = false,
 }: Props) {
-  const { vehicle, brand, model } = getData();
+  const { vehicle, brand, model, year } = getData();
   return (
     <Container>
       {step1 && <Text> Veiculos {">"} </Text>}
 
-      {step2 && <Text>{vehicle} </Text>}
+      {step2 && <Text> {vehicle}</Text>}
 
       {step3 && (
         <Text>
-          {">"} {brand.nome}{" "}
+          {" >"} {brand.nome}
+          {""} {">"}
         </Text>
       )}
 
       {step4 && (
         <Text>
-          {">"} {model.nome} {">"}{" "}
+          {"  "}{model.nome} {">"}{""}
         </Text>
       )}
 
-      {step5 && <Text> 1995-1 Gasolina</Text>}
+      {step5 && <Text> {year.nome}</Text>}
     </Container>
   );
 }
