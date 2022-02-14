@@ -44,6 +44,7 @@ export function ChooseVehicle() {
         setMotorcycle(false);
         setCar(!car);
         setValue(3);
+        setBrand("")
         getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;
@@ -51,6 +52,7 @@ export function ChooseVehicle() {
         setTruck(false);
         setCar(false);
         setValue(3);
+        setBrand("")
         setMotorcycle(!motorcycle);
         getBrands(vehicle_params);
         setSelected(vehicle_params);
@@ -60,6 +62,7 @@ export function ChooseVehicle() {
         setMotorcycle(false);
         setTruck(!truck);
         setValue(3);
+        setBrand("")
         getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;

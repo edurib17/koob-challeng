@@ -1,4 +1,4 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
@@ -19,14 +19,15 @@ export const Description = styled.Text`
   margin-bottom: 29px;
 `;
 
-export const ContainerButtonsTags = styled.View`
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+export const ContainerButtonsTags = styled.ScrollView`
+  flex: 1;
+  margin-top: -25px;
+  width: 100%;
+  margin-left: -12px;
 `;
 
 export const SeeMore = styled.TouchableOpacity`
-  margin-top: 20px;
+  flex: 1;
   margin-left: 10px;
 `;
 
