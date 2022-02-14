@@ -10,7 +10,7 @@
 - Styled-Components [Styled-components](https://styled-components.com/)
 - React-native-iphone-x-helper[React-native-iphone-x-helper](https://www.npmjs.com/package/react-native-iphone-x-helper)
 - Axios [Axios](https://axios-http.com/docs/intro)
-- React-native-community/clipboard [React-native-community/clipboard](https://www.npmjs.com/package/@react-native-community/clipboard)
+- Clipboard [React-native-community/clipboard](https://www.npmjs.com/package/@react-native-community/clipboard)
 - React-native-gesture-handler[React-native-gesture-handler](https://docs.swmansion.com/react-native-gesture-handler/docs/)
 - React-native-safe-area-context[React-native-safe-area-context](https://www.npmjs.com/package/react-native-safe-area-context)
 - FIPE API [FIPE](https://deividfortuna.github.io/fipe/)
