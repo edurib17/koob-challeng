@@ -1,5 +1,6 @@
-import React from 'react';
-import {Container, Text} from './styles';
+import React from "react";
+import { getData } from "../../hooks/getData";
+import { Container, Text } from "./styles";
 
 type Props = {
   step1?: boolean;
@@ -16,17 +17,18 @@ export function Steps({
   step4 = false,
   step5 = false,
 }: Props) {
+  const { vehicle,brand } = getData();
   return (
     <Container>
-      {step1 && <Text> Veiculos {'>'} </Text>}
+      {step1 && <Text> Veiculos {">"} </Text>}
 
-      {step2 && <Text>Carros </Text>}
+      {step2 && <Text>{vehicle} </Text>}
 
-      {step3 && <Text>{'>'} Audi </Text>}
+      {step3 && <Text>{">"} {brand.nome} </Text>}
 
       {step4 && (
         <Text>
-          {'>'} 80 S2 Avant {'>'}{' '}
+          {">"} 80 S2 Avant {">"}{" "}
         </Text>
       )}
 

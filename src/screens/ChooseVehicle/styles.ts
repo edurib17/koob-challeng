@@ -1,10 +1,11 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.View`
   flex: 1;
 `;
 export const ContainerVehicle = styled.View`
   flex: 1;
+  height: auto;
   margin-left: 15px;
   padding-right: 25px;
 `;
@@ -26,15 +27,13 @@ export const ContainerButtons = styled.View`
   margin-top: 2px;
 `;
 
-export const ContainerButtonsTags = styled.View`
-  justify-content: space-around;
-  flex-direction: row;
-  flex-wrap: wrap;
+export const ContainerButtonsTags = styled.ScrollView`
+  flex: 1;
   margin-top: -25px;
 `;
 
 export const SeeMore = styled.TouchableOpacity`
-  margin-top: 20px;
+  flex: 1;
   margin-left: 10px;
 `;
 

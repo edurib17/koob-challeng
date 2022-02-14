@@ -1,13 +1,18 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
+
+type Props = {
+  isSelected: boolean;
+};
 
 export const TagButton = styled.TouchableOpacity`
   height: 46px;
-  padding-left: 29px;
-  padding-right: 29px;
-  margin-right: 9px;
+  padding-left: 53px;
+  padding-right: 53px;
+  margin-left: 5px;
   margin-top: 14px;
   background: #fafafa;
-  // border: 1px solid #fc570c;
+  border: ${({ isSelected }: Props) =>
+    isSelected ? "1px solid #fc570c" : "none"};
   box-sizing: border-box;
   border-radius: 10px;
   align-items: center;

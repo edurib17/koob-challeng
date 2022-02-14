@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
-import {useNavigation} from '@react-navigation/native';
-import {StackNavigationProp} from '@react-navigation/stack';
-import {RootStackParamList} from '../RootStackPrams';
-import {Button} from '../../components/Button';
-import {ButtonIcon} from '../../components/ButtonIcon';
-import {Steps} from '../../components/Steps';
-import {Tag} from '../../components/Tag';
+import React, { useState, useEffect } from "react";
+import { getData } from "../../hooks/getData";
+import { useNavigation } from "@react-navigation/native";
+import { StackNavigationProp } from "@react-navigation/stack";
+import { RootStackParamList } from "../RootStackPrams";
+import { Button } from "../../components/Button";
+import { ButtonIcon } from "../../components/ButtonIcon";
+import { Steps } from "../../components/Steps";
+import { Tag } from "../../components/Tag";
 import {
   Container,
   Description,
@@ -15,55 +16,64 @@ import {
   SeeMoreText,
   Footer,
   ContainerVehicle,
-} from './styles';
+} from "./styles";
 
 type ChooseVehicleScreenProp = StackNavigationProp<
   RootStackParamList,
-  'ChooseVehicle'
+  "ChooseVehicle"
 >;
 
 export function ChooseVehicle() {
-  const [selected, setSelected] = useState('');
+  const [selected, setSelected] = useState("");
   const [car, setCar] = useState(Boolean);
+  const [brand, setBrand] = useState("");
   const [motorcycle, setMotorcycle] = useState(Boolean);
   const [truck, setTruck] = useState(Boolean);
+  const [value, setValue] = useState(3);
   const navigation = useNavigation<ChooseVehicleScreenProp>();
+  const { getBrands, brands, getModels } = getData();
 
-  const tags = [
-    {id: 1, name: 'BMW'},
-    {id: 2, name: 'Audi'},
-    {id: 3, name: 'Citroën'},
-    {id: 4, name: 'GM - Chevrolet'},
-    {id: 5, name: 'Honda'},
-  ];
+  useEffect(() => {
+    getBrands("carros");
+  }, []);
 
   const handleSelect = (vehicle_params: React.SetStateAction<string>) => {
     switch (vehicle_params) {
-      case 'carros':
+      case "Carros":
         setTruck(false);
         setMotorcycle(false);
         setCar(!car);
+        setValue(3);
+        getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;
-      case 'motos':
+      case "Motos":
         setTruck(false);
         setCar(false);
+        setValue(3);
         setMotorcycle(!motorcycle);
+        getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;
-      case 'caminhoes':
+      case "Caminhoes":
         setCar(false);
         setMotorcycle(false);
         setTruck(!truck);
+        setValue(3);
+        getBrands(vehicle_params);
         setSelected(vehicle_params);
         break;
       default:
     }
   };
 
+  const handleSelectTag = (brand_params: any) => {
+    setBrand(brand_params.nome);
+    getModels(brand_params);
+  };
+
   return (
     <Container>
-      {console.log(selected)}
       <Steps step1 step2 />
       <ContainerVehicle>
         <Description>Selecione o tipo de veiculo</Description>
@@ -73,7 +83,7 @@ export function ChooseVehicle() {
             icon="car-side"
             sizes="SMALL"
             isSelected={car}
-            onPress={() => handleSelect('carros')}
+            onPress={() => handleSelect("Carros")}
           />
 
           <ButtonIcon
@@ -81,25 +91,39 @@ export function ChooseVehicle() {
             icon="motorcycle"
             sizes="SMALL"
             isSelected={motorcycle}
-            onPress={() => handleSelect('motos')}
+            onPress={() => handleSelect("Motos")}
           />
           <ButtonIcon
             title="Caminhões"
             icon="truck"
             sizes="SMALL"
             isSelected={truck}
-            onPress={() => handleSelect('caminhoes')}
+            onPress={() => handleSelect("Caminhoes")}
           />
         </ContainerButtons>
         <Description>Selecione a marca do veiculo</Description>
-        <ContainerButtonsTags>
-          {tags.map((item, index) => (
-            <Tag key={index} title={item.name} />
+        <ContainerButtonsTags
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={{
+            flexWrap: "wrap",
+            flexDirection: "row",
+            justifyContent: "space-around",
+          }}
+        >
+          {brands.slice(0, value).map((item: any, index) => (
+            <Tag
+              key={index}
+              title={item.nome}
+              isSelected={item.nome === brand ? true : false}
+              onPress={() => handleSelectTag(item)}
+            />
           ))}
         </ContainerButtonsTags>
-        <SeeMore>
-          <SeeMoreText>Ver mais...</SeeMoreText>
-        </SeeMore>
+        {value == 3 ? (
+          <SeeMore onPress={() => setValue(brands.length)}>
+            <SeeMoreText>Ver mais...</SeeMoreText>
+          </SeeMore>
+        ) : null}
       </ContainerVehicle>
       <Footer>
         <Button
@@ -110,7 +134,8 @@ export function ChooseVehicle() {
         <Button
           sizes="BACKGROUND"
           title="Próximo"
-          onPress={() => navigation.navigate('ChooseModelVehicle')}
+          disabled={selected && brand ? false : true}
+          onPress={() => navigation.navigate("ChooseModelVehicle")}
         />
       </Footer>
     </Container>
