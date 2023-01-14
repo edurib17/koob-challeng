@@ -21,21 +21,21 @@
 
 <p>
 
-#### 1. Clone o projeto
+#### 1. Clonar o projeto
 
 ```
 git clone https://github.com/edurib17/koob-challeng.git
 cd koob-challeng
 ```
 
-#### 2. Atualize as dependencias
+#### 2. Atualizar as dependencias
 
 ```
 yarn
 npm install
 ```
 
-#### 3. Execute o projeto
+#### 3. Executar o projeto
 
 ```
 npx react-native start    
